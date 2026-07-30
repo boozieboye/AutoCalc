@@ -37,7 +37,7 @@ h2 { margin-bottom: 10px; font-size: clamp(1.65rem, 3vw, 2.35rem); line-height: 
 .hero-points { display: flex; flex-wrap: wrap; gap: 10px; }
 .hero-points span { padding: 8px 12px; border: 1px solid var(--border); border-radius: 999px; background: rgba(255,255,255,.75); color: var(--muted); font-size: .9rem; font-weight: 700; }
 .hero-card { padding: 28px; border-radius: var(--radius-large); background: var(--text); color: white; box-shadow: var(--shadow); }
-.hero-card span { color: rgba(255,255,255,.7); }
+.hero-card p, .hero-card span { color: rgba(255,255,255,.7); }
 .hero-card strong { display: block; margin: 8px 0; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1; }
 .calculator-section { padding: 36px 0 80px; }
 .calculator-layout { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(320px,.75fr); gap: 28px; align-items: start; }
