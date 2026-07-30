@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+Exit code: 0
+Wall time: 0.7 seconds
+Output:
+<!doctype html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +14,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Autokosten Calculator">
-        <span class="brand-mark">€</span>
+        <span class="brand-mark">â‚¬</span>
         <span>Autokosten Calculator</span>
       </a>
       <a class="nav-link" href="#uitleg">Hoe werkt het?</a>
@@ -24,20 +27,16 @@
         <div>
           <p class="eyebrow">Gratis rekentool</p>
           <h1>Wat kost jouw auto echt?</h1>
-          <p class="hero-text">
-            Bereken je brandstofkosten, vaste lasten, totale maandkosten,
-            jaarkosten en kosten per kilometer.
-          </p>
+          <p class="hero-text">Bereken je brandstofkosten, vaste lasten, totale maandkosten, jaarkosten en kosten per kilometer.</p>
           <div class="hero-points" aria-label="Voordelen">
             <span>Geen account nodig</span>
             <span>Werkt direct in je browser</span>
             <span>Geen gegevensopslag</span>
           </div>
         </div>
-
         <div class="hero-card">
           <p>Voorbeeld</p>
-          <strong>€ 0,29 per km</strong>
+          <strong>â‚¬ 0,29 per km</strong>
           <span>bij 1.250 km per maand</span>
         </div>
       </div>
@@ -58,17 +57,17 @@
             <label class="field">
               <span>Kilometers per maand</span>
               <div class="input-wrap">
-                <input id="monthlyKm" name="monthlyKm" type="number" min="1" step="1" value="1250" inputmode="decimal" required>
+                <input id="monthlyKm" name="monthlyKm" type="number" min="1" step="1" placeholder="Bijv. 1250" inputmode="decimal" required>
                 <span>km</span>
               </div>
-              <small>Bijvoorbeeld woon-werk en privé samen.</small>
+              <small>Woon-werk en privÃ© samen.</small>
             </label>
 
             <label class="field">
               <span>Brandstofprijs per liter</span>
               <div class="input-wrap">
-                <span>€</span>
-                <input id="fuelPrice" name="fuelPrice" type="number" min="0.01" step="0.01" value="2.05" inputmode="decimal" required>
+                <span>â‚¬</span>
+                <input id="fuelPrice" name="fuelPrice" type="number" min="0.01" step="0.01" placeholder="Bijv. 2,05" inputmode="decimal" required>
               </div>
             </label>
 
@@ -76,41 +75,41 @@
               <span>Verbruik</span>
               <div class="input-wrap">
                 <span>1 op</span>
-                <input id="efficiency" name="efficiency" type="number" min="0.1" step="0.1" value="18" inputmode="decimal" required>
+                <input id="efficiency" name="efficiency" type="number" min="0.1" step="0.1" placeholder="Bijv. 18" inputmode="decimal" required>
                 <span>km</span>
               </div>
-              <small>Bijvoorbeeld 18 voor een verbruik van 1 op 18.</small>
+              <small>Vul bijvoorbeeld 18 in voor een verbruik van 1 op 18.</small>
             </label>
 
             <label class="field">
               <span>Verzekering per maand</span>
               <div class="input-wrap">
-                <span>€</span>
-                <input id="insurance" name="insurance" type="number" min="0" step="0.01" value="55" inputmode="decimal">
+                <span>â‚¬</span>
+                <input id="insurance" name="insurance" type="number" min="0" step="0.01" placeholder="Bijv. 55" inputmode="decimal">
               </div>
             </label>
 
             <label class="field">
               <span>Wegenbelasting per maand</span>
               <div class="input-wrap">
-                <span>€</span>
-                <input id="roadTax" name="roadTax" type="number" min="0" step="0.01" value="42" inputmode="decimal">
+                <span>â‚¬</span>
+                <input id="roadTax" name="roadTax" type="number" min="0" step="0.01" placeholder="Bijv. 42" inputmode="decimal">
               </div>
             </label>
 
             <label class="field">
               <span>Onderhoud per jaar</span>
               <div class="input-wrap">
-                <span>€</span>
-                <input id="maintenanceYear" name="maintenanceYear" type="number" min="0" step="0.01" value="900" inputmode="decimal">
+                <span>â‚¬</span>
+                <input id="maintenanceYear" name="maintenanceYear" type="number" min="0" step="0.01" placeholder="Bijv. 900" inputmode="decimal">
               </div>
             </label>
 
             <label class="field">
               <span>Afschrijving per jaar</span>
               <div class="input-wrap">
-                <span>€</span>
-                <input id="depreciationYear" name="depreciationYear" type="number" min="0" step="0.01" value="1200" inputmode="decimal">
+                <span>â‚¬</span>
+                <input id="depreciationYear" name="depreciationYear" type="number" min="0" step="0.01" placeholder="Bijv. 1200" inputmode="decimal">
               </div>
               <small>Waardedaling van de auto. Optioneel.</small>
             </label>
@@ -118,8 +117,8 @@
             <label class="field">
               <span>Overige kosten per maand</span>
               <div class="input-wrap">
-                <span>€</span>
-                <input id="otherMonthly" name="otherMonthly" type="number" min="0" step="0.01" value="20" inputmode="decimal">
+                <span>â‚¬</span>
+                <input id="otherMonthly" name="otherMonthly" type="number" min="0" step="0.01" placeholder="Bijv. 20" inputmode="decimal">
               </div>
               <small>Bijvoorbeeld parkeren, wassen of pechhulp.</small>
             </label>
@@ -136,53 +135,28 @@
             <p class="eyebrow">Uitkomst</p>
             <h2>Jouw autokosten</h2>
           </div>
-
           <div class="main-result">
             <span>Kosten per kilometer</span>
-            <strong id="costPerKm">€ 0,00</strong>
+            <strong id="costPerKm">â€”</strong>
           </div>
-
           <div class="result-list">
-            <div>
-              <span>Brandstof per maand</span>
-              <strong id="fuelMonthly">€ 0,00</strong>
-            </div>
-            <div>
-              <span>Vaste en overige kosten</span>
-              <strong id="fixedMonthly">€ 0,00</strong>
-            </div>
-            <div class="highlight-row">
-              <span>Totale kosten per maand</span>
-              <strong id="totalMonthly">€ 0,00</strong>
-            </div>
-            <div>
-              <span>Totale kosten per jaar</span>
-              <strong id="totalYearly">€ 0,00</strong>
-            </div>
+            <div><span>Brandstof per maand</span><strong id="fuelMonthly">â€”</strong></div>
+            <div><span>Vaste en overige kosten</span><strong id="fixedMonthly">â€”</strong></div>
+            <div class="highlight-row"><span>Totale kosten per maand</span><strong id="totalMonthly">â€”</strong></div>
+            <div><span>Totale kosten per jaar</span><strong id="totalYearly">â€”</strong></div>
           </div>
-
           <div class="cost-breakdown">
             <h3>Verdeling per maand</h3>
             <div class="bar-row">
-              <div class="bar-label">
-                <span>Brandstof</span>
-                <span id="fuelPercentage">0%</span>
-              </div>
+              <div class="bar-label"><span>Brandstof</span><span id="fuelPercentage">â€”</span></div>
               <div class="bar-track"><div id="fuelBar" class="bar-fill"></div></div>
             </div>
             <div class="bar-row">
-              <div class="bar-label">
-                <span>Overige kosten</span>
-                <span id="otherPercentage">0%</span>
-              </div>
+              <div class="bar-label"><span>Overige kosten</span><span id="otherPercentage">â€”</span></div>
               <div class="bar-track"><div id="otherBar" class="bar-fill"></div></div>
             </div>
           </div>
-
-          <p class="result-note">
-            Dit is een indicatie. Financieringskosten, onverwachte reparaties en
-            persoonlijke belastingeffecten zijn niet afzonderlijk meegenomen.
-          </p>
+          <p class="result-note">Dit is een indicatie. Financieringskosten, onverwachte reparaties en persoonlijke belastingeffecten zijn niet afzonderlijk meegenomen.</p>
         </aside>
       </div>
     </section>
@@ -192,19 +166,13 @@
         <article>
           <p class="eyebrow">Berekening</p>
           <h2>Hoe wordt dit berekend?</h2>
-          <p>
-            De calculator deelt je maandelijkse kilometers door het verbruik.
-            Dat aantal liters wordt vermenigvuldigd met de brandstofprijs.
-            Daarna worden verzekering, wegenbelasting, onderhoud, afschrijving
-            en overige kosten toegevoegd.
-          </p>
+          <p>De calculator deelt je maandelijkse kilometers door het verbruik. Dat aantal liters wordt vermenigvuldigd met de brandstofprijs. Daarna worden verzekering, wegenbelasting, onderhoud, afschrijving en overige kosten toegevoegd.</p>
         </article>
-
         <article class="formula-card">
           <h3>Formule</h3>
-          <p><strong>Brandstofkosten</strong> = kilometers ÷ verbruik × literprijs</p>
-          <p><strong>Maandkosten</strong> = brandstof + vaste kosten + jaarlijkse kosten ÷ 12</p>
-          <p><strong>Kosten per km</strong> = totale maandkosten ÷ kilometers</p>
+          <p><strong>Brandstofkosten</strong> = kilometers Ã· verbruik Ã— literprijs</p>
+          <p><strong>Maandkosten</strong> = brandstof + vaste kosten + jaarlijkse kosten Ã· 12</p>
+          <p><strong>Kosten per km</strong> = totale maandkosten Ã· kilometers</p>
         </article>
       </div>
     </section>
@@ -213,10 +181,11 @@
   <footer>
     <div class="container footer-inner">
       <span>Autokosten Calculator</span>
-      <span>Indicatieve berekening — geen financieel advies.</span>
+      <span>Indicatieve berekening â€” geen financieel advies.</span>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
