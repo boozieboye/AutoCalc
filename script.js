@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 0.7 seconds
-Output:
 const form = document.getElementById("calculatorForm");
 const resetButton = document.getElementById("resetButton");
 const errorSummary = document.getElementById("errorSummary");
@@ -9,6 +6,14 @@ const requiredFields = [
   { id: "monthlyKm", label: "kilometers per maand" },
   { id: "fuelPrice", label: "brandstofprijs per liter" },
   { id: "efficiency", label: "verbruik" }
+];
+
+const optionalFieldIds = [
+  "insurance",
+  "roadTax",
+  "maintenanceYear",
+  "depreciationYear",
+  "otherMonthly"
 ];
 
 const resultIds = [
@@ -37,7 +42,7 @@ function clearErrors() {
 
 function clearResults() {
   resultIds.forEach((id) => {
-    document.getElementById(id).textContent = "â€”";
+    document.getElementById(id).textContent = "—";
   });
   document.getElementById("fuelBar").style.width = "0";
   document.getElementById("otherBar").style.width = "0";
@@ -48,13 +53,25 @@ form.addEventListener("submit", (event) => {
   clearErrors();
 
   const missing = requiredFields.filter(({ id }) => numberValue(id) <= 0);
-  if (missing.length) {
+  const negative = optionalFieldIds.filter((id) => numberValue(id) < 0);
+
+  if (missing.length || negative.length) {
     missing.forEach(({ id }) => {
       document.getElementById(id).closest(".input-wrap").classList.add("invalid");
     });
-    errorSummary.textContent = `Vul een geldige waarde in voor ${missing.map(({ label }) => label).join(", ")}.`;
+    negative.forEach((id) => {
+      document.getElementById(id).closest(".input-wrap").classList.add("invalid");
+    });
+    const messages = [];
+    if (missing.length) {
+      messages.push(`Vul een geldige waarde in voor ${missing.map(({ label }) => label).join(", ")}.`);
+    }
+    if (negative.length) {
+      messages.push("Kosten mogen niet negatief zijn.");
+    }
+    errorSummary.textContent = messages.join(" ");
     errorSummary.hidden = false;
-    document.getElementById(missing[0].id).focus();
+    document.getElementById(missing[0]?.id || negative[0]).focus();
     return;
   }
 
@@ -94,4 +111,3 @@ resetButton.addEventListener("click", () => {
 });
 
 clearResults();
-
