@@ -54,9 +54,7 @@ De repository staat op GitHub.
 
 De website wordt automatisch gepubliceerd via Netlify.
 
-De branch `main` is de live productieversie.
-
-Een wijziging aan `main` kan daardoor direct gevolgen hebben voor de openbare website.
+De branch `main` is de live productieversie. Een wijziging aan `main` kan daardoor direct gevolgen hebben voor de openbare website.
 
 ## Algemene regels
 
@@ -112,8 +110,10 @@ Een wijziging aan `main` kan daardoor direct gevolgen hebben voor de openbare we
 * Gebruik `textContent` voor gewone tekstuitvoer.
 * Gebruik `innerHTML` alleen wanneer dit noodzakelijk en veilig is.
 * Behoud localStorage-functionaliteit.
-* Andere bezoekers mogen nooit de gegevens van een eerdere bezoeker ontvangen.
-* LocalStorage mag alleen gegevens in de eigen browser opslaan.
+* Sla invoer uitsluitend lokaal op via localStorage.
+* Verstuur opgeslagen invoer niet naar een server of externe dienst.
+* Sla geen persoonsgegevens of gevoelige informatie op.
+* Zorg dat de knop om invoer te wissen ook de opgeslagen localStorage-gegevens verwijdert.
 
 ## Rekenregels
 
@@ -207,11 +207,57 @@ Bij een onduidelijke opdracht:
 * maak geen grote aannames;
 * vermeld belangrijke aannames in de samenvatting.
 
+## Automatische verbeteropdrachten
+
+Wanneer Codex zelfstandig een verbeterpunt moet kiezen:
+
+* voer maximaal één verbetering per run uit;
+* controleer eerst of er al een openstaande automatische pull request bestaat;
+* maak geen nieuwe codewijziging zolang de vorige automatische pull request nog openstaat;
+* kies een verbetering op basis van een concrete fout, toegankelijkheidsprobleem, prestatieprobleem of duidelijk gebruiksprobleem;
+* verander niet alleen iets omdat een andere vormgeving mogelijk is;
+* voeg geen nieuwe pagina’s of functies toe zonder aantoonbare meerwaarde;
+* voer relevante controles uit;
+* open een pull request en stop daarna;
+* merge een pull request nooit zelfstandig.
+
+## Internetonderzoek
+
+Internetonderzoek mag alleen worden gebruikt voor:
+
+* officiële technische documentatie;
+* controleerbare openbare informatie over autokosten;
+* actuele Nederlandse informatie wanneer de opdracht dit vereist;
+* rechtenvrije afbeeldingen en iconen.
+
+Gebruik voor belangrijke feiten bij voorkeur officiële Nederlandse bronnen.
+
+Vermeld bij actuele bedragen, regels of gemiddelden:
+
+* de bron;
+* de datum waarop de informatie is gecontroleerd;
+* of het bedrag een voorbeeld, schatting of gemiddelde is.
+
+Neem geen informatie over zonder deze te controleren. Voeg geen claims toe die niet met een betrouwbare bron kunnen worden onderbouwd.
+
+## Afbeeldingen en auteursrecht
+
+* Gebruik geen willekeurige afbeeldingen uit Google Afbeeldingen.
+* Gebruik alleen eigen afbeeldingen, gegenereerde afbeeldingen of bestanden met een duidelijke licentie voor hergebruik.
+* Hotlink geen externe afbeeldingen.
+* Sla gebruikte afbeeldingen lokaal op in `assets/images/`.
+* Noteer bron, maker en licentie in `docs/image-sources.md`.
+* Comprimeer afbeeldingen voordat ze worden toegevoegd.
+* Geef iedere inhoudelijke afbeelding een beschrijvende alt-tekst.
+* Voeg geen afbeelding toe wanneer deze geen duidelijke meerwaarde heeft.
+
 ## Git-werkwijze
 
-Werk bij voorkeur in een aparte branch.
-
-Push niet rechtstreeks naar `main`, tenzij dit expliciet wordt gevraagd.
+* Werk altijd in een aparte branch.
+* Push nooit rechtstreeks naar `main`.
+* Maak voor iedere codewijziging een pull request naar `main`, ook bij kleine wijzigingen.
+* Alleen de eigenaar beslist of een pull request wordt samengevoegd.
+* Codex mag een pull request nooit zelfstandig mergen.
 
 Gebruik duidelijke branchnamen, bijvoorbeeld:
 
@@ -226,8 +272,6 @@ Gebruik duidelijke commitberichten, bijvoorbeeld:
 * `Verbeter validatie van invoervelden`;
 * `Herstel berekening kosten per kilometer`;
 * `Verbeter mobiele weergave`.
-
-Maak bij grotere wijzigingen een pull request naar `main`.
 
 ## Pull-requestbeschrijving
 
@@ -265,7 +309,8 @@ Noem eventuele beperkingen, aannames of risico’s.
 * Geen verzonnen reviews, bezoekersaantallen of keurmerken toevoegen.
 * Geen API-sleutels in frontendcode plaatsen.
 * Geen analytics of cookies toevoegen zonder expliciete toestemming.
-* Geen directe wijzigingen aan productie uitvoeren zonder de gevolgen te vermelden.
+* Geen directe wijzigingen aan productie uitvoeren.
+* Geen pull requests automatisch mergen.
 
 ## Uitleg aan de eigenaar
 
